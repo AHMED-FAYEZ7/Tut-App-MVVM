@@ -1,11 +1,11 @@
-import 'package:advance_course_flutter/presentaion/forgot_password/forgot_password.dart';
-import 'package:advance_course_flutter/presentaion/login/login.dart';
-import 'package:advance_course_flutter/presentaion/main/main_view.dart';
-import 'package:advance_course_flutter/presentaion/onboarding/onboarding.dart';
-import 'package:advance_course_flutter/presentaion/register/register.dart';
-import 'package:advance_course_flutter/presentaion/resources/strings_manger.dart';
-import 'package:advance_course_flutter/presentaion/splash/splash.dart';
-import 'package:advance_course_flutter/presentaion/store_details/store_details.dart';
+import 'package:advance_course_flutter/presentation/forgot_password/forgot_password.dart';
+import 'package:advance_course_flutter/presentation/login/login.dart';
+import 'package:advance_course_flutter/presentation/main/main_view.dart';
+import 'package:advance_course_flutter/presentation/onboarding/onboarding.dart';
+import 'package:advance_course_flutter/presentation/register/register.dart';
+import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
+import 'package:advance_course_flutter/presentation/splash/splash.dart';
+import 'package:advance_course_flutter/presentation/store_details/store_details.dart';
 import 'package:flutter/material.dart';
 
 class Routes
