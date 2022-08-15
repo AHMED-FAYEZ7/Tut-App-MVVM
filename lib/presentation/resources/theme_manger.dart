@@ -1,7 +1,7 @@
-import 'package:advance_course_flutter/presentaion/resources/color_manger.dart';
-import 'package:advance_course_flutter/presentaion/resources/font_manger.dart';
-import 'package:advance_course_flutter/presentaion/resources/styles_manger.dart';
-import 'package:advance_course_flutter/presentaion/resources/values_manger.dart';
+import 'package:advance_course_flutter/presentation/resources/color_manger.dart';
+import 'package:advance_course_flutter/presentation/resources/font_manger.dart';
+import 'package:advance_course_flutter/presentation/resources/styles_manger.dart';
+import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
 
 ThemeData getAppTheme()
@@ -61,6 +61,10 @@ ThemeData getAppTheme()
       ),
       subtitle1: getMediumStyle(
         color: ColorManger.lightGrey,
+        fontSize: FontSize.s14,
+      ),
+      subtitle2: getMediumStyle(
+        color: ColorManger.primary,
         fontSize: FontSize.s14,
       ),
       caption: getRegularStyle(color: ColorManger.grey1,),

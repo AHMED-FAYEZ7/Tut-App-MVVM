@@ -1,4 +1,4 @@
-import 'package:advance_course_flutter/presentaion/resources/font_manger.dart';
+import 'package:advance_course_flutter/presentation/resources/font_manger.dart';
 import 'package:flutter/material.dart';
 
 TextStyle _getTextStyle(
