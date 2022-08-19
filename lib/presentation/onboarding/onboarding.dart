@@ -1,5 +1,6 @@
 import 'package:advance_course_flutter/presentation/resources/assets_manager.dart';
 import 'package:advance_course_flutter/presentation/resources/color_manger.dart';
+import 'package:advance_course_flutter/presentation/resources/routes_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +78,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushReplacementNamed(
+                      context, Routes.loginRoute);
+                },
                 child: Text(
                   AppStrings.skip,
                   style: Theme.of(context).textTheme.subtitle2,
