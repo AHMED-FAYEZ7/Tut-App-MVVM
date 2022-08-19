@@ -1,35 +1,19 @@
 import 'package:advance_course_flutter/app/constant.dart';
 import 'package:advance_course_flutter/data/responses/responses.dart';
 import 'package:dio/dio.dart';
+import 'package:retrofit/http.dart';
 
-abstract class AppServicesClient{
-  static late Dio dio;
+part 'app_api.g.dart';
 
-  static init(){
-    dio = Dio(
-      BaseOptions(
-        baseUrl: Constant.baseUrl,
-        receiveDataWhenStatusError: true,
-      ),
-    );
-  }
+@RestApi(baseUrl: Constant.baseUrl)
+abstract class AppServiceClient {
+  factory AppServiceClient(Dio dio, {String baseUrl}) = _AppServiceClient;
 
-  static Future<Response> postData({
-    required String url,
-    required Map<String , dynamic> data,
-    Map<String ,dynamic>? query,
-  }) async
-    {
-      // dio.options.headers = {
-      //   'Authorization': imei,
-      //   "Content-Type":"application/json",
-      // };
-
-      return await dio.post(
-        url,
-        queryParameters: query,
-        data: data,
+  @POST("/customers/login")
+  Future<AuthenticationResponse> login(
+      @Field("email") String email,
+      @Field("password") String password,
+      @Field("imei") String imei,
+      @Field("deviceType") String deviceType,
       );
-    }
 }
-/////////////////
