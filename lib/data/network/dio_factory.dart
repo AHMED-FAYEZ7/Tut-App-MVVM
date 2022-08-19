@@ -15,7 +15,6 @@ class DioFactory {
 
   DioFactory(this._appPreferences);
 
-
   Future<Dio> getDio() async {
     Dio dio = Dio();
     int _timeOut = 60 * 1000; // 1 min

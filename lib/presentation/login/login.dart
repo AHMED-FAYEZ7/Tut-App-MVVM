@@ -1,3 +1,4 @@
+import 'package:advance_course_flutter/app/di.dart';
 import 'package:advance_course_flutter/presentation/login/login_viewmodel.dart';
 import 'package:advance_course_flutter/presentation/resources/assets_manager.dart';
 import 'package:advance_course_flutter/presentation/resources/color_manger.dart';
@@ -5,7 +6,6 @@ import 'package:advance_course_flutter/presentation/resources/routes_manger.dart
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
 
-  LoginViewModel _viewModel = LoginViewModel(null);
+  LoginViewModel _viewModel = instance<LoginViewModel>();
   var _userNameController = TextEditingController();
   var _passwordController = TextEditingController();
 

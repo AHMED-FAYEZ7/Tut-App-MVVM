@@ -27,11 +27,11 @@ class Contacts{
 }
 
 class Authentication{
-  User? user;
+  User? customer;
   Contacts? contacts;
 
   Authentication(
-    this.user,
+    this.customer,
     this.contacts,
   );
 }
