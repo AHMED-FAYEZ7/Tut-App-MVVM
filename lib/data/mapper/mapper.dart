@@ -5,8 +5,8 @@ import 'package:advance_course_flutter/data/responses/responses.dart';
 import 'package:advance_course_flutter/domain/model/model.dart';
 
 extension UserResponseMapper on CustomerResponse?{
-  User toDomain(){
-    return User(
+  Customer toDomain(){
+    return Customer(
       this?.id?.orEmpty() ?? EMPTY,
       this?.name?.orEmpty() ?? EMPTY,
       this?.numOfNotifications?.orZero() ?? ZERO,
