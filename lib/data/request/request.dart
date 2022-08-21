@@ -4,5 +4,5 @@ class LoginRequest{
   String imei;
   String deviceType;
 
-  LoginRequest(this.email,this.password,this.deviceType,this.imei);
+  LoginRequest(this.email,this.password,this.imei,this.deviceType);
 }
