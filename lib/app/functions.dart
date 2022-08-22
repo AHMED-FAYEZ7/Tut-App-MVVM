@@ -1,3 +1,5 @@
+
+
 import 'dart:io';
 
 import 'package:advance_course_flutter/domain/model/model.dart';
@@ -30,4 +32,8 @@ Future<DeviceInfo> getDeviceDetails() async {
     return DeviceInfo(name, identifier, version);
   }
   return DeviceInfo(name, identifier, version);
+}
+
+bool isEmailValid(String email) {
+  return RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
 }

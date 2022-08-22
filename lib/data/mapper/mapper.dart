@@ -25,10 +25,16 @@ extension ContactsResponseMapper on ContactsResponse?{
 }
 
 extension AuthenticationResponseMapper on AuthenticationResponse?{
-  Authentication toDomain(){
+  Authentication toDomain() {
     return Authentication(
       this?.customer?.toDomain(),
       this?.contacts?.toDomain(),
     );
+  }
+}
+
+extension ForgotPasswordResponseMapper on ForgotPasswordResponse?{
+  String toDomain(){
+    return this?.support?.orEmpty() ?? EMPTY;
   }
 }
