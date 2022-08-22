@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:advance_course_flutter/app/app_prefs.dart';
+import 'package:advance_course_flutter/app/di.dart';
+import 'package:advance_course_flutter/main.dart';
 import 'package:advance_course_flutter/presentation/resources/assets_manager.dart';
 import 'package:advance_course_flutter/presentation/resources/color_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/routes_manger.dart';
@@ -15,15 +18,29 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
 
   Timer? _timer;
+  final AppPreferences _appPreferences = instance<AppPreferences>();
 
   _startDelay()
   {
     _timer = Timer(const Duration(seconds: 2), _goNext);
   }
 
-  _goNext()
+  _goNext() async
   {
-    Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+    _appPreferences.isUserLoggedIn().then((isUserLoggedIn) {
+    if(isUserLoggedIn){
+        // navigate to main()
+      Navigator.pushReplacementNamed(context, Routes.mainRoute);
+    }else{
+    _appPreferences.isOnBoardingScreenViewed().then((isOnBoardingScreenViewed) {
+      if(isOnBoardingScreenViewed){
+        Navigator.pushReplacementNamed(context, Routes.loginRoute);
+      }else{
+        Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+      }
+    });
+  }
+    });
   }
 
   @override
