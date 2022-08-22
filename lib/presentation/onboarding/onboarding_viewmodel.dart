@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:advance_course_flutter/domain/model/model.dart';
 import 'package:advance_course_flutter/presentation/base/base_view_model.dart';
 import 'package:advance_course_flutter/presentation/resources/assets_manager.dart';
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 
+import '../../domain/model/model.dart';
 
 
 class OnBoardingViewModel extends BaseViewModel
@@ -33,7 +33,7 @@ class OnBoardingViewModel extends BaseViewModel
   @override
   int goNext() {
     int nextIndex = _currentIndex++; // +1
-    if (nextIndex >= _list.length - 1) {
+    if (nextIndex >= _list.length) {
       _currentIndex = 0; // infinite loop to go to first item inside the slider
     }
     return _currentIndex;
@@ -42,7 +42,7 @@ class OnBoardingViewModel extends BaseViewModel
   @override
   int goPrevious() {
     int previousIndex = _currentIndex--; // -1
-    if (previousIndex == 0) {
+    if (previousIndex == -1) {
       _currentIndex =
           _list.length - 1; // infinite loop to go to the length of slider list
     }

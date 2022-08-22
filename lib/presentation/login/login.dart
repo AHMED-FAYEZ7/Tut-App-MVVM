@@ -1,3 +1,4 @@
+import 'package:advance_course_flutter/app/app_prefs.dart';
 import 'package:advance_course_flutter/app/di.dart';
 import 'package:advance_course_flutter/presentation/common/state_renderer/state_render_impl.dart';
 import 'package:advance_course_flutter/presentation/login/login_viewmodel.dart';
@@ -7,6 +8,7 @@ import 'package:advance_course_flutter/presentation/resources/routes_manger.dart
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -18,6 +20,8 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
 
   LoginViewModel _viewModel = instance<LoginViewModel>();
+  AppPreferences _appPreferences = instance<AppPreferences>();
+
   var _userNameController = TextEditingController();
   var _passwordController = TextEditingController();
 
@@ -27,6 +31,14 @@ class _LoginViewState extends State<LoginView> {
     _viewModel.start();
     _userNameController.addListener(()=>_viewModel.setUserName(_userNameController.text));
     _passwordController.addListener(()=>_viewModel.setPassword(_passwordController.text));
+
+    _viewModel.isUserLogedInSuccessfllyStreamController.stream.listen((isSuccessLoggedIn) {
+      // navigate to main
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        _appPreferences.setIsUserLoggedIn();
+        Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
+      });
+    });
   }
 
   @override
