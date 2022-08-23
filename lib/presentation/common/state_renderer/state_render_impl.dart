@@ -25,6 +25,19 @@ class LoadingState extends FlowState {
   StateRendererType getStateRendererType() => stateRendererType;
 }
 
+// success
+class SuccessState extends FlowState {
+  String message;
+
+  SuccessState(this.message);
+
+  @override
+  String getMessage() => message;
+
+  @override
+  StateRendererType getStateRendererType() => StateRendererType.POPUP_SUCCESS_STATE;
+}
+
 // error state (POPUP, FULL LOADING)
 class ErrorState extends FlowState {
   StateRendererType stateRendererType;
@@ -114,6 +127,18 @@ extension FlowStateExtension on FlowState {
               message: getMessage(),
               retryActionFunction: retryActionFunction);
         }
+      case SuccessState:
+        {
+          // check loading remove
+          dismissDialog(context);
+
+          // show popup
+          showPopUp(context, StateRendererType.POPUP_SUCCESS_STATE, getMessage(),
+          title: AppStrings.success);
+
+          // return content screen
+          return contentScreenWidget;
+        }
       default:
         {
           return contentScreenWidget;
@@ -131,12 +156,13 @@ extension FlowStateExtension on FlowState {
       ModalRoute.of(context)?.isCurrent != true;
 
   showPopUp(BuildContext context, StateRendererType stateRendererType,
-      String message) {
+      String message,{String title = EMPTY }) {
     WidgetsBinding.instance.addPostFrameCallback((_) => showDialog(
         context: context,
         builder: (BuildContext context) => StateRenderer(
           stateRendererType: stateRendererType,
           message: message,
+          title: title,
           retryActionFunction: () {},
         )));
   }

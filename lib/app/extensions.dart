@@ -1,6 +1,6 @@
 // extension on string
 
-String EMPTY = "";
+const String EMPTY = "";
 int ZERO = 0;
 extension NonNullString on String?{
   String orEmpty(){
