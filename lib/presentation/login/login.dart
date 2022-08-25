@@ -85,10 +85,13 @@ class _LoginViewState extends State<LoginView> {
                           controller: _userNameController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            hintText: AppStrings.username,
-                            labelText: AppStrings.username,
+                            prefixIcon: const Icon(
+                              Icons.email,
+                            ),
+                            hintText: AppStrings.email,
+                            labelText: AppStrings.email,
                             errorText: (snapshot.data ?? true)
-                              ? null :AppStrings.usernameError,
+                              ? null :AppStrings.emailError,
                           ),
                         );
                       },
@@ -104,6 +107,9 @@ class _LoginViewState extends State<LoginView> {
                         controller: _passwordController,
                         keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.lock,
+                          ),
                           hintText: AppStrings.password,
                           labelText: AppStrings.password,
                           errorText: (snapshot.data ?? true)
