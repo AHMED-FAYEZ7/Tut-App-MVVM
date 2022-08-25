@@ -14,6 +14,12 @@ class AppStrings
   static const String skip = "skip";
 
   static const String username = "Username";
+  static const String email = "Email";
+  static const String emailError = "Email is Wrong";
+  static const String phone = "Phone";
+  static const String profilePicture = "Profile Picture";
+  static const String photoGalley = "Photo From Galley";
+  static const String photoCamera = "Photo From Camera";
   static const String usernameError = "Username is Wrong";
   static const String password = "Password";
   static const String passwordError = "Password is Wrong";
@@ -29,5 +35,9 @@ class AppStrings
   static const String emailHint = 'Email';
   static const String invalidEmail = "Invalid Email";
   static const String resetPassword = "Reset Password";
+
+  static const String register = "Register";
+  static const String loginText = "Already have an account ? Login";
+
 
 }

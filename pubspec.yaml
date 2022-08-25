@@ -47,6 +47,8 @@ dependencies:
   freezed: ^2.1.0+1
   get_it: ^7.2.0
   lottie: ^1.4.1
+  country_code_picker: ^2.0.2
+  image_picker: ^0.8.5+3
 
 
 dev_dependencies:
@@ -85,6 +87,7 @@ flutter:
     - assets/images/solid_circle_ic.svg
     - assets/images/left_arrow_ic.svg
     - assets/images/right_arrow_ic.svg
+    - assets/images/photo_camera_ic.svg
     - assets/json/loading.json
     - assets/json/error.json
     - assets/json/empty.json
