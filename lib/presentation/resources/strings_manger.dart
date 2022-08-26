@@ -39,5 +39,10 @@ class AppStrings
   static const String register = "Register";
   static const String loginText = "Already have an account ? Login";
 
+  static const String home = "Home";
+  static const String notification = "Notification";
+  static const String search = "Search";
+  static const String settings = "Settings";
+
 
 }
