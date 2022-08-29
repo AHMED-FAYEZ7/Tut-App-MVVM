@@ -63,6 +63,10 @@ ThemeData getAppTheme()
         color: ColorManger.white,
         fontSize: FontSize.s16,
       ),
+      headline3: getBoldStyle(
+        color: ColorManger.primary,
+        fontSize: FontSize.s16,
+      ),
       subtitle1: getMediumStyle(
         color: ColorManger.lightGrey,
         fontSize: FontSize.s14,
