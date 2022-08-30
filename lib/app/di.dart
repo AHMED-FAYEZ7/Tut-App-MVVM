@@ -1,4 +1,5 @@
 
+import 'package:advance_course_flutter/data/data_Souece/local_data_source.dart';
 import 'package:advance_course_flutter/data/data_Souece/remote_data_source.dart';
 import 'package:advance_course_flutter/data/network/app_api.dart';
 import 'package:advance_course_flutter/data/network/dio_factory.dart';
@@ -47,9 +48,13 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<RemoteDataSource>(
           () => RemoteDataSourceImplementer(instance()));
 
+  // local data source
+  instance.registerLazySingleton<LocalDataSource>(
+          () => LocalDataSourceImplementer());
+
   // repository
   instance.registerLazySingleton<Repository>(
-          () => RepositoryImpl(instance(), instance()));
+          () => RepositoryImpl(instance(), instance(), instance()));
 }
 
 initLoginModule(){
