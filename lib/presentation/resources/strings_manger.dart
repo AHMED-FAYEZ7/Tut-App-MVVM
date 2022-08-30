@@ -51,5 +51,10 @@ class AppStrings
 
   static const String storeDetails = "Store details";
 
+  static const String changeLang = "Change Language";
+  static const String contactUs = "Contact Us";
+  static const String inviteFriends = "Invite Friends";
+  static const String logout = "Logout";
+
 
 }

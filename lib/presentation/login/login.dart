@@ -86,12 +86,12 @@ class _LoginViewState extends State<LoginView> {
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             prefixIcon: const Icon(
-                              Icons.email,
+                              Icons.person,
                             ),
-                            hintText: AppStrings.email,
-                            labelText: AppStrings.email,
+                            hintText: AppStrings.username,
+                            labelText: AppStrings.username,
                             errorText: (snapshot.data ?? true)
-                              ? null :AppStrings.emailError,
+                              ? null :AppStrings.usernameError,
                           ),
                         );
                       },
