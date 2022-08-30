@@ -77,6 +77,7 @@ ThemeData getAppTheme()
       ),
       caption: getRegularStyle(color: ColorManger.grey1,),
       bodyText1: getRegularStyle(color: ColorManger.grey,),
+      bodyText2: getMediumStyle(color: ColorManger.lightGrey),
     ),
 
     // input decoration theme
