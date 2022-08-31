@@ -6,6 +6,7 @@ import 'package:advance_course_flutter/presentation/resources/color_manger.dart'
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MainView extends StatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -24,10 +25,10 @@ class _MainViewState extends State<MainView> {
   ];
 
   List<String> titles =[
-    AppStrings.home,
-    AppStrings.search,
-    AppStrings.notification,
-    AppStrings.settings,
+    AppStrings.home.tr(),
+    AppStrings.search.tr(),
+    AppStrings.notification.tr(),
+    AppStrings.settings.tr(),
   ];
 
   int _currentIndex = 0;
@@ -56,22 +57,22 @@ class _MainViewState extends State<MainView> {
           unselectedItemColor: ColorManger.grey,
           currentIndex: _currentIndex,
           onTap: onTap,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: AppStrings.home,
+              icon: const Icon(Icons.home),
+              label: AppStrings.home.tr(),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: AppStrings.search,
+              icon: const Icon(Icons.search),
+              label: AppStrings.search.tr(),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: AppStrings.notification,
+              icon: const Icon(Icons.notifications),
+              label: AppStrings.notification.tr(),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: AppStrings.settings,
+              icon: const Icon(Icons.settings),
+              label: AppStrings.settings.tr(),
             ),
           ],
         ),

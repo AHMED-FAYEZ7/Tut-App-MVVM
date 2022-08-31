@@ -7,6 +7,7 @@ import 'package:advance_course_flutter/presentation/resources/color_manger.dart'
 import 'package:advance_course_flutter/presentation/resources/routes_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -88,10 +89,10 @@ class _LoginViewState extends State<LoginView> {
                             prefixIcon: const Icon(
                               Icons.person,
                             ),
-                            hintText: AppStrings.username,
-                            labelText: AppStrings.username,
+                            hintText: AppStrings.username.tr(),
+                            labelText: AppStrings.username.tr(),
                             errorText: (snapshot.data ?? true)
-                              ? null :AppStrings.usernameError,
+                              ? null :AppStrings.usernameError.tr(),
                           ),
                         );
                       },
@@ -110,10 +111,10 @@ class _LoginViewState extends State<LoginView> {
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
-                          hintText: AppStrings.password,
-                          labelText: AppStrings.password,
+                          hintText: AppStrings.password.tr(),
+                          labelText: AppStrings.password.tr(),
                           errorText: (snapshot.data ?? true)
-                              ? null :AppStrings.passwordError,
+                              ? null :AppStrings.passwordError.tr(),
                         ),
                       );
                     },
@@ -134,8 +135,8 @@ class _LoginViewState extends State<LoginView> {
                               _viewModel.login();
                             }
                             :null,
-                          child: const Text(
-                            AppStrings.login,
+                          child: Text(
+                            AppStrings.login.tr(),
                           ),
                         ),
                       );
@@ -155,7 +156,7 @@ class _LoginViewState extends State<LoginView> {
                               context, Routes.forgotPasswordRoute);
                         },
                         child: Text(
-                          AppStrings.forgetPassword,
+                          AppStrings.forgetPassword.tr(),
                           style: Theme.of(context).textTheme.subtitle2,
                         ),
                       ),
@@ -166,7 +167,7 @@ class _LoginViewState extends State<LoginView> {
                               context, Routes.registerRoute);
                         },
                         child: Text(
-                          AppStrings.registerText,
+                          AppStrings.registerText.tr(),
                           style: Theme.of(context).textTheme.subtitle2,
                         ),
                       ),

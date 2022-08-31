@@ -2,6 +2,7 @@ import 'package:advance_course_flutter/app/extensions.dart';
 import 'package:advance_course_flutter/presentation/common/state_renderer/state_renderer.dart';
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 abstract class FlowState {
   StateRendererType getStateRendererType();
@@ -16,7 +17,7 @@ class LoadingState extends FlowState {
   String message;
 
   LoadingState({required this.stateRendererType, String? message})
-      : message = message ?? AppStrings.loading;
+      : message = message ?? AppStrings.loading.tr();
 
   @override
   String getMessage() => message;
@@ -134,7 +135,7 @@ extension FlowStateExtension on FlowState {
 
           // show popup
           showPopUp(context, StateRendererType.POPUP_SUCCESS_STATE, getMessage(),
-          title: AppStrings.success);
+          title: AppStrings.success.tr());
 
           // return content screen
           return contentScreenWidget;
