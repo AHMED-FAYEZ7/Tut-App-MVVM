@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:advance_course_flutter/app/app_prefs.dart';
 import 'package:advance_course_flutter/app/di.dart';
-import 'package:advance_course_flutter/main.dart';
 import 'package:advance_course_flutter/presentation/resources/assets_manager.dart';
 import 'package:advance_course_flutter/presentation/resources/color_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/routes_manger.dart';

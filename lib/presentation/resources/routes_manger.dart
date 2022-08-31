@@ -8,6 +8,7 @@ import 'package:advance_course_flutter/presentation/resources/strings_manger.dar
 import 'package:advance_course_flutter/presentation/splash/splash.dart';
 import 'package:advance_course_flutter/presentation/store_details/store_details.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Routes
 {
@@ -57,12 +58,12 @@ class RouteGenerator
           appBar: AppBar(
             title: const Text(
               AppStrings.noRouteFound,
-            ),
+            ).tr(),
           ),
-          body: const Center(
-            child: Text(
+          body: Center(
+            child: const Text(
                 AppStrings.noRouteFound,
-            ),
+            ).tr(),
           ),
         ),
     );

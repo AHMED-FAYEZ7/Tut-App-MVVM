@@ -2,11 +2,15 @@ import 'package:advance_course_flutter/app/app_prefs.dart';
 import 'package:advance_course_flutter/app/di.dart';
 import 'package:advance_course_flutter/data/data_Souece/local_data_source.dart';
 import 'package:advance_course_flutter/presentation/resources/assets_manager.dart';
+import 'package:advance_course_flutter/presentation/resources/language_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/routes_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'dart:math' as math;
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -25,33 +29,49 @@ class _SettingsPageState extends State<SettingsPage> {
       padding: const EdgeInsets.all(AppPadding.p8),
       children: [
         ListTile(
-          title: const Text(AppStrings.changeLang),
+          title: Text(AppStrings.changeLang.tr()),
           leading: SvgPicture.asset(ImageAssets.changeLangIc),
-          trailing: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          trailing: Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.rotationY(isRtl() ? math.pi : 0),
+            child: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          ),
           onTap: (){
             _changeLanguage();
           },
         ),
         ListTile(
-          title: const Text(AppStrings.contactUs),
+          title: Text(AppStrings.contactUs.tr()),
           leading: SvgPicture.asset(ImageAssets.contactUsIc),
-          trailing: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          trailing: Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.rotationY(isRtl() ? math.pi : 0),
+            child: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          ),
           onTap: (){
             _contactUs();
           },
         ),
         ListTile(
-          title: const Text(AppStrings.inviteFriends),
+          title: Text(AppStrings.inviteFriends.tr()),
           leading: SvgPicture.asset(ImageAssets.inviteFriendsIc),
-          trailing: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          trailing: Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.rotationY(isRtl() ? math.pi : 0),
+            child: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          ),
           onTap: (){
             _inviteFriends();
           },
         ),
         ListTile(
-          title: const Text(AppStrings.logout),
+          title: Text(AppStrings.logout.tr()),
           leading: SvgPicture.asset(ImageAssets.logoutIc),
-          trailing: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          trailing: Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.rotationY(isRtl() ? math.pi : 0),
+            child: SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+          ),
           onTap: (){
             _logout();
           },
@@ -60,8 +80,15 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  bool isRtl(){
+    return context.locale == ARABIC_LOCAL; // APP IN ARABIC
+  }
+
   void _changeLanguage() {
     // i will apply localisation later
+    _appPreferences.setLanguageChanged();
+    // restart app
+    Phoenix.rebirth(context);
   }
 
   void _contactUs() {

@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import '../../domain/model/model.dart';
 import '../resources/routes_manger.dart';
 import '../resources/strings_manger.dart';
@@ -87,7 +87,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       AppStrings.skip,
                       style: Theme.of(context).textTheme.subtitle2,
                       textAlign: TextAlign.end,
-                    ),
+                    ).tr(),
                   )),
               // add layout for indicator and arrows
               const Spacer(),
