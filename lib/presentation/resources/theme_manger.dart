@@ -4,10 +4,8 @@ import 'package:advance_course_flutter/presentation/resources/styles_manger.dart
 import 'package:advance_course_flutter/presentation/resources/values_manger.dart';
 import 'package:flutter/material.dart';
 
-ThemeData getAppTheme()
-{
+ThemeData getAppTheme() {
   return ThemeData(
-
     // main color of app
     primaryColor: ColorManger.primary,
     primaryColorLight: ColorManger.primaryOpacity70,
@@ -21,7 +19,6 @@ ThemeData getAppTheme()
       color: ColorManger.white,
       shadowColor: ColorManger.grey,
       elevation: AppSize.s4,
-
     ),
 
     // appBar theme
@@ -31,8 +28,8 @@ ThemeData getAppTheme()
       elevation: AppSize.s4,
       shadowColor: ColorManger.primaryOpacity70,
       titleTextStyle: getRegularStyle(
-          color: ColorManger.white,
-          fontSize: AppSize.s16,
+        color: ColorManger.white,
+        fontSize: AppSize.s16,
       ),
     ),
 
@@ -48,16 +45,17 @@ ThemeData getAppTheme()
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         textStyle: getRegularStyle(color: ColorManger.white),
-        primary: ColorManger.primary,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s12)),
+        backgroundColor: ColorManger.primary,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppSize.s12)),
       ),
     ),
 
     // text theme
     textTheme: TextTheme(
       headline1: getSemiBoldStyle(
-          color: ColorManger.darkGrey,
-          fontSize: FontSize.s16,
+        color: ColorManger.darkGrey,
+        fontSize: FontSize.s16,
       ),
       headline2: getRegularStyle(
         color: ColorManger.white,
@@ -75,12 +73,14 @@ ThemeData getAppTheme()
         color: ColorManger.lightGrey,
         fontSize: FontSize.s14,
       ),
-      subtitle2: getMediumStyle(
-        color: ColorManger.primary,
-        fontSize: FontSize.s12
+      subtitle2:
+          getMediumStyle(color: ColorManger.primary, fontSize: FontSize.s12),
+      caption: getRegularStyle(
+        color: ColorManger.grey1,
       ),
-      caption: getRegularStyle(color: ColorManger.grey1,),
-      bodyText1: getRegularStyle(color: ColorManger.grey,),
+      bodyText1: getRegularStyle(
+        color: ColorManger.grey,
+      ),
       bodyText2: getMediumStyle(color: ColorManger.lightGrey),
     ),
 
@@ -99,41 +99,27 @@ ThemeData getAppTheme()
 
       // enabled border
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: ColorManger.grey,
-          width: AppSize.s1_5
-        ),
+        borderSide: BorderSide(color: ColorManger.grey, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
       // focused border
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: ColorManger.primary,
-            width: AppSize.s1_5
-        ),
+        borderSide: BorderSide(color: ColorManger.primary, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
       // error border
       errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: ColorManger.error,
-            width: AppSize.s1_5
-        ),
+        borderSide: BorderSide(color: ColorManger.error, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
       // focused error border
       focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: ColorManger.primary,
-            width: AppSize.s1_5
-        ),
+        borderSide: BorderSide(color: ColorManger.primary, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
-
     ),
-
   );
 }

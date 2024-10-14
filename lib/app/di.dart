@@ -1,4 +1,3 @@
-
 import 'package:advance_course_flutter/data/data_Souece/local_data_source.dart';
 import 'package:advance_course_flutter/data/data_Souece/remote_data_source.dart';
 import 'package:advance_course_flutter/data/network/app_api.dart';
@@ -16,7 +15,7 @@ import 'package:advance_course_flutter/presentation/login/login_viewmodel.dart';
 import 'package:advance_course_flutter/presentation/main/home/home_viewmodel.dart';
 import 'package:advance_course_flutter/presentation/register/register_viewmodel.dart';
 import 'package:advance_course_flutter/presentation/store_details/store_details_viewmodel.dart';
-import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,7 +36,7 @@ Future<void> initAppModule() async {
 
   // network info
   instance.registerLazySingleton<NetworkInfo>(
-          () => NetworkInfoImpl(DataConnectionChecker()));
+      () => NetworkInfoImpl(DataConnectionChecker()));
 
   // dio factory
   instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));
@@ -48,19 +47,19 @@ Future<void> initAppModule() async {
 
   // remote data source
   instance.registerLazySingleton<RemoteDataSource>(
-          () => RemoteDataSourceImplementer(instance()));
+      () => RemoteDataSourceImplementer(instance()));
 
   // local data source
   instance.registerLazySingleton<LocalDataSource>(
-          () => LocalDataSourceImplementer());
+      () => LocalDataSourceImplementer());
 
   // repository
   instance.registerLazySingleton<Repository>(
-          () => RepositoryImpl(instance(), instance(), instance()));
+      () => RepositoryImpl(instance(), instance(), instance()));
 }
 
-initLoginModule(){
-  if(!GetIt.I.isRegistered<LoginUseCase>()){
+initLoginModule() {
+  if (!GetIt.I.isRegistered<LoginUseCase>()) {
     instance.registerFactory<LoginUseCase>(() => LoginUseCase(instance()));
     instance.registerFactory<LoginViewModel>(() => LoginViewModel(instance()));
   }
@@ -69,18 +68,18 @@ initLoginModule(){
 initForgotPasswordModule() {
   if (!GetIt.I.isRegistered<ForgotPasswordUseCase>()) {
     instance.registerFactory<ForgotPasswordUseCase>(
-            () => ForgotPasswordUseCase(instance()));
+        () => ForgotPasswordUseCase(instance()));
     instance.registerFactory<ForgotPasswordViewModel>(
-            () => ForgotPasswordViewModel(instance()));
+        () => ForgotPasswordViewModel(instance()));
   }
 }
 
 initRegisterModule() {
   if (!GetIt.I.isRegistered<RegisterUseCase>()) {
-    instance.registerFactory<RegisterUseCase>(
-            () => RegisterUseCase(instance()));
+    instance
+        .registerFactory<RegisterUseCase>(() => RegisterUseCase(instance()));
     instance.registerFactory<RegisterViewModel>(
-            () => RegisterViewModel(instance()));
+        () => RegisterViewModel(instance()));
     instance.registerFactory<ImagePicker>(() => ImagePicker());
   }
 }
@@ -94,12 +93,14 @@ initHomeModule() {
 
 initStoreDetailsModule() {
   if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {
-    instance.registerFactory<StoreDetailsUseCase>(() => StoreDetailsUseCase(instance()));
-    instance.registerFactory<StoreDetailsViewModel>(() => StoreDetailsViewModel(instance()));
+    instance.registerFactory<StoreDetailsUseCase>(
+        () => StoreDetailsUseCase(instance()));
+    instance.registerFactory<StoreDetailsViewModel>(
+        () => StoreDetailsViewModel(instance()));
   }
 }
 
-resetAllModules(){
+resetAllModules() {
   instance.reset(dispose: false);
   initAppModule();
   initHomeModule();

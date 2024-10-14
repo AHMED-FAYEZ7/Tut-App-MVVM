@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:advance_course_flutter/data/network/failure.dart';
 import 'package:advance_course_flutter/presentation/resources/strings_manger.dart';
 import 'package:dio/dio.dart';
