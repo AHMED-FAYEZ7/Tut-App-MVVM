@@ -80,6 +80,7 @@ class RepositoryImpl extends Repository {
 
         if (response.status == ApiInternalStatus.SUCCESS) // success
             {
+              print(response.status);
           // return data (success)
           // return right
           return Right(response.toDomain());

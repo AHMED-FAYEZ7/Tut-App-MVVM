@@ -40,7 +40,7 @@ dependencies:
   dio: ^4.0.6
 #  json_serializable: ^6.3.1
   dartz: ^0.10.1
-  data_connection_checker: ^0.3.4
+  data_connection_checker_nulls: ^0.0.2
   pretty_dio_logger: ^1.1.1
   shared_preferences: ^2.0.15
   device_info: ^2.0.3
