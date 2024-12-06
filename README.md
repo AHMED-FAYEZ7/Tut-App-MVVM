@@ -1,4 +1,4 @@
-# advance_course_flutter
+# Tut-app
 
 A new Flutter project.
 
